@@ -6,6 +6,6 @@ class Sample(models.Model):
 class Product(models.Model):
     title = models.CharField(max_length=222)
     desc = models.TextField()
-    product_image = models.ImageField(upload_to='images', blank=True, default='default.jpg')
+    product_image = models.ImageField(upload_to='images', blank=True, default='images/default.jpg')
     def __str__(self):
         return self.title
