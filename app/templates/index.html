@@ -3,28 +3,19 @@
 {% block title %}Home{% endblock title %}
 {% block body %}
 <div class="container">
-    <div id="carouselExample" class="carousel slide mt-5">
-        <h1>Fashion</h1>
+    <div id="carouselExampleIndicators" class="carousel slide">
         <div class="carousel-indicators">
             <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
                 aria-current="true" aria-label="Slide 1"></button>
-            {% for i in range %}
+                {% for i in range %}
             <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="{{i}}"
                 aria-label="Slide 2"></button>
-            {% endfor %}
+                {% endfor %}
         </div>
-        <div class="carousel-inner ">
-            <div class="carousel-item active d-flex gap-4">
-                <div class="card" style="width: 18rem;">
-                    <img src="..." class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                            the card’s content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                </div>
-                {% for i in products|slice:"i:" %}
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class="product_banner d-flex gap-5">
+                    {% for i in products|slice:"i:" %}
                     <div class="card" style="width: 18rem;">
                         <img src="..." class="card-img-top" alt="...">
                         <div class="card-body">
@@ -35,16 +26,17 @@
                         </div>
                     </div>
                     {% if forloop.counter|divisibleby:3 and forloop.counter > 0 and not forloop.last %}
-                </div><div class="carousel-item active d-flex gap-4">
-                    {% endif %}
+                </div><div class="carousel-item d-flex gap-5">
+                {% endif %}
                 {% endfor %}
-            </div>
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+            data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Previous</span>
         </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+            data-bs-slide="next">
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Next</span>
         </button>
