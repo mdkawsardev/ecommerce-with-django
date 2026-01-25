@@ -1,3 +1,10 @@
-h1 {
-    color: skyblue;
+.carousel-control-next, .carousel-control-prev {
+    top: 90%;
+    background: #000000 !important;
+}
+.carousel-indicators {
+    bottom: -45px;
+}
+.carousel-indicators [data-bs-target] {
+    background-color: #0a0909;
 }
