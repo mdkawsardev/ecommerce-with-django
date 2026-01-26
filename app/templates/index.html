@@ -15,19 +15,7 @@
         </div>
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <div class="d-flex">
-                    <div class="col-3">
-                    <div class="card" style="width: 18rem;">
-                        <img src="..." class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                                the card’s content.</p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
-                        </div>
-                    </div>
-                </div>
-                {% for i in products|slice:"i:" %}
+                {% for i in products %}
                 <div class="col-3">
                     <div class="card" style="width: 18rem;">
                         <img src="..." class="card-img-top" alt="...">
@@ -39,7 +27,7 @@
                         </div>
                     </div>
                 </div>
-                {% if forloop.counter|divisibleby:3 and forloop.counter > 0 and not forloop.last %}
+                {% if forloop.counter|divisibleby:4 and forloop.counter > 0 and not forloop.last %}
             </div>
         </div><div class="carousel-item">
         {% endif%}
