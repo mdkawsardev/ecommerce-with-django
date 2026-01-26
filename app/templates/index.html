@@ -3,6 +3,7 @@
 {% block title %}Home{% endblock title %}
 {% block body %}
 <div class="container">
+    <h1 class="my-5">Products</h1>
     <div id="carouselExampleIndicators" class="carousel slide">
         <div class="carousel-indicators">
             <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
@@ -14,9 +15,8 @@
         </div>
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <div class="product_banner d-flex gap-5">
-                    {% for i in products|slice:"i:" %}
-                    <div class="card" style="width: 18rem;">
+                <div class="col-3">
+                    <div class="card">
                         <img src="..." class="card-img-top" alt="...">
                         <div class="card-body">
                             <h5 class="card-title">Card title</h5>
@@ -25,10 +25,24 @@
                             <a href="#" class="btn btn-primary">Go somewhere</a>
                         </div>
                     </div>
-                    {% if forloop.counter|divisibleby:3 and forloop.counter > 0 and not forloop.last %}
-                </div><div class="carousel-item d-flex gap-5">
-                {% endif %}
+                </div>
+                {% for i in products|slice:"i:" %}
+                <div class="col-3">
+                    <div class="card">
+                        <img src="..." class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                                the card’s content.</p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                    </div>
+                </div>
+                {% if forloop.counter|divisibleby:3 and forloop.counter > 0 and not forloop.last %}
+                </div><div class="carousel-item">
+                {% endif%}
                 {% endfor %}
+            </div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
             data-bs-slide="prev">
