@@ -15,8 +15,9 @@
         </div>
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <div class="col-3">
-                    <div class="card">
+                <div class="d-flex">
+                    <div class="col-3">
+                    <div class="card" style="width: 18rem;">
                         <img src="..." class="card-img-top" alt="...">
                         <div class="card-body">
                             <h5 class="card-title">Card title</h5>
@@ -28,7 +29,7 @@
                 </div>
                 {% for i in products|slice:"i:" %}
                 <div class="col-3">
-                    <div class="card">
+                    <div class="card" style="width: 18rem;">
                         <img src="..." class="card-img-top" alt="...">
                         <div class="card-body">
                             <h5 class="card-title">Card title</h5>
@@ -39,8 +40,9 @@
                     </div>
                 </div>
                 {% if forloop.counter|divisibleby:3 and forloop.counter > 0 and not forloop.last %}
-                </div><div class="carousel-item">
-                {% endif%}
+            </div>
+        </div><div class="carousel-item">
+        {% endif%}
                 {% endfor %}
             </div>
         </div>
